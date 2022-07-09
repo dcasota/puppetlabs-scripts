@@ -3,18 +3,29 @@
 ## Puppetserver Cloud image
 Before going to interconnect the Azure cloud environment, let's start with provisioning the puppetserver cloud image.
 
-On the Azure marketplace, the latest available cloud image is pe2019.8.11. The following script [Puppet-Install.ps1](https://github.com/dcasota/puppetlabs-scripts/blob/main/Azure/Puppet-Install.ps1) provisions the vm.
+On the Azure marketplace, the latest available cloud image is pe2019.8.11. You can go through through the UI dialog steps to configure a puppetserver. As alternative, you can run a scripted install.
 
+### Scripted install
+The following script [Puppet-Install.ps1](https://github.com/dcasota/puppetlabs-scripts/blob/main/Azure/Puppet-Install.ps1) provisions the vm.
+```
 ./Puppet-Install.ps1 -ResourceGroupName <your resource group> -Location <your location> -VMName <your name puppetserver>
-
+```
 Prerequisites are:
 - Script must run on MS Windows OS with Powershell PSVersion 5.1 or higher
 - Azure account with Virtual Machine contributor role
 
-It may take a while until puppetserver is up and running. Meanwhile connect with ssh using the localadmin credentials, and run ```sudo /opt/puppetlabs/cloud/bin/check_status.sh --wait```. Wait until the configuration process has finished.  
+It may take a while until the puppetserver vm is up and running. Meanwhile connect with ssh using the localadmin credentials, and run ```sudo /opt/puppetlabs/cloud/bin/check_status.sh --wait```. Wait until the configuration process has finished.  
 
 ![pe-services](https://user-images.githubusercontent.com/14890243/178111433-82c9e342-8c4b-4926-af9a-e101c3f5a353.png)
+  
 
+### First run  
+  
+#### Wrong Publisher+Product is displayed when creating a puppet vm from marketplace
+The script uses ```Set-AzMarketplaceTerms```. Not sure why but at that point a wrong publisher+productname is displayed. Maybe the Azure community can help?
+https://docs.microsoft.com/en-us/answers/questions/917999/wrong-publisherproduct-is-displayed-when-creating.html
+
+#### Console Password
 In the docs it is written that you can set the console_password with ```sudo /opt/puppetlabs/puppet/bin/puppet infrastructure console_password --password=<yourpassword>```. You must be logged-in as root to run the command - obviously without sudo then, see https://tickets.puppetlabs.com/browse/ENTERPRISE-1352.
 
 ![pepasswordchange](https://user-images.githubusercontent.com/14890243/178112489-c9b19806-713e-448d-85a3-8eca702951fc.png)
