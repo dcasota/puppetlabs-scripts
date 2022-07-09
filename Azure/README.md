@@ -1,5 +1,6 @@
+# Azure Lab environment
 
-# Pupptserver Cloud image
+## Puppetserver Cloud image
 Before going to interconnect the Azure cloud environment, let's start with provisioning the puppetserver cloud image.
 
 On the Azure marketplace, the latest available cloud image is pe2019.8.11. The following script [Puppet-Install.ps1](https://github.com/dcasota/puppetlabs-scripts/blob/main/Azure/Puppet-Install.ps1) provisions the vm.
