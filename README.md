@@ -28,7 +28,7 @@ For a first lab environment, I will use an onprem RPi4, a laptop connected to th
 
 Before going to interconnect the Azure cloud environment, let's start with provisioning the puppetserver cloud image.
 
-On the Azure marketplace, the latest available cloud image is pe2019.8.11. The following script provisions the vm.
+On the Azure marketplace, the latest available cloud image is pe2019.8.11. The following script [Puppet-Install.ps1](https://github.com/dcasota/puppetlabs-scripts/blob/main/Azure/Puppet-Install.ps1) provisions the vm.
 
 ./Puppet-Install.ps1 -ResourceGroupName <your resource group> -Location <your location> -VMName <your name puppetserver>
 
