@@ -49,13 +49,29 @@ You can find [here](https://github.com/dcasota/photonos-scripts/wiki/Configure-a
 Since quite a while Puppetlabs supports Puppet agent on aarch64 as well. Unfortunately there is no tdnf package (tiny dandified yum) of Puppet agent on Photon OS, but you can download the rpm from https://yum.puppetlabs.com/puppet. Here's the installation recipe - it installs the rhel 7.9 puppet agent.
 
 ```
+# change ip and fqdn to your lab environment
+export PUPPETSERVER_IP=20.203.142.11
+export PUPPETSERVER_FQDN=puppetmaster.sttfmguzm4zuhep0f2vmuubvca.zrhx.internal.cloudapp.net
+
+cat <<EOF >>/etc/hosts
+$PUPPETSERVER_IP  $PUPPETSERVER_FQDN
+EOF
 curl -J -O -L https://yum.puppetlabs.com/puppet/el/7/aarch64/puppet-agent-7.9.0-1.el7.aarch64.rpm
 rpm -i puppet-agent-7.9.0-1.el7.aarch64.rpm
 /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
 ln -s /opt/puppetlabs/bin/puppet /bin
+export PATH=/opt/puppetlabs/bin:$PATH
+puppet config set server $PUPPETSERVER_FQDN --section main
+puppet ssl bootstrap
 ```
 
+With default settings, the puppetserver does not know that agent' certificate.  
 
+<img src="https://user-images.githubusercontent.com/14890243/178143212-36d971ab-dfc4-4cb7-8a43-aa1078ce8fe3.png" align="left" height="80" width="500" />
+<br clear="left"/><br clear="both"/>
 
+You can sign agent's certificate on the puppetserver UI.  
 
+![pecertagent](https://user-images.githubusercontent.com/14890243/178143022-e2162711-24ed-4ca0-9adb-8499e010c0ae.png)
 
+Rerun ```puppet ssl bootstrap```. Now the command completes successfully.
