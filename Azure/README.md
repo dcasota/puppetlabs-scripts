@@ -1,6 +1,6 @@
 # Azure Lab environment
 
-In this lab, we will configure a public Puppetserver on Azure and a RPi4 node.
+In this lab, we will configure a public Puppetserver on Azure and a local RPi4 node.
 
 To get an idea of the system configuration, see [here](https://puppet.com/docs/pe/2019.8/system_configuration.html).
 
