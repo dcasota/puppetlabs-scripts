@@ -48,7 +48,7 @@ The console appears.
 
 ## Cleanup
 
-Before rerun the Azure setup, delete the Azure resourcegroup puppet (Default) with all sub components and wait until all resources have been destroyed.
+Before a rerun of the Azure setup, delete the Azure resourcegroup "puppet" (Default) with all sub components and wait until all resources have been destroyed.
 
 The install script allows to specify location, resourcegroup and puppetserver name.
 
