@@ -46,7 +46,7 @@ VMware Photon OS is a minimal container host Linux optimized to run on VMware pl
 
 You can find [here](https://github.com/dcasota/photonos-scripts/wiki/Configure-a-complete-Raspberry-Pi-Virtualhere-installation) a description on how to install and configure the operating system, that said, provisioned without any automation tools. Instead of the Virtualhere installation part, install the puppet agent bits.
 
-Since quite a while Puppetlabs supports Puppet agent on aarch64 as well. Unfortunately there is no tdnf package (tiny dandified yum) of Puppet agent on Photon OS, but you can download the rpm from https://yum.puppetlabs.com/puppet. So, here's the installation recipe - it will install the rhel 7.9 puppet agent.
+Since quite a while Puppetlabs supports Puppet agent on aarch64 as well. Unfortunately there is no tdnf package (tiny dandified yum) of Puppet agent on Photon OS, but you can download the rpm from https://yum.puppetlabs.com/puppet. Here's the installation recipe - it installs the rhel 7.9 puppet agent.
 
 ```
 curl -J -O -L https://yum.puppetlabs.com/puppet/el/7/aarch64/puppet-agent-7.9.0-1.el7.aarch64.rpm
