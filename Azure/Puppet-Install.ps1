@@ -4,6 +4,7 @@
 # History
 # 0.1  05.07.2022   dcasota  Initial release
 # 0.2  09.07.2022   dcasota  bugfix windowsConfiguration, minor optimizations, see anomaly
+# 0.21 10.07.2022   dcasota  fix securityrules
 
 # Web links
 # https://docs.microsoft.com/en-us/azure/virtual-machines/windows/cli-ps-findimage
@@ -143,7 +144,16 @@ if (([string]::IsNullOrEmpty($nsg)))
     -Access Allow -Protocol Tcp -Direction Inbound -Priority 120 `
     -SourceAddressPrefix Internet -SourcePortRange * `
     -DestinationAddressPrefix * -DestinationPortRange 443
-    $nsg = New-AzNetworkSecurityGroup -Name $nsgName -ResourceGroupName $ResourceGroupName -Location $LocationName -SecurityRules $nsgRule1,$nsgRule2
+    $nsgRule3 = New-AzNetworkSecurityRuleConfig -Name mynsgRule3 -Description "Allow 8140 tcp" `
+    -Access Allow -Protocol Tcp -Direction Inbound -Priority 130 `
+    -SourceAddressPrefix Internet -SourcePortRange * `
+    -DestinationAddressPrefix * -DestinationPortRange 8140
+    $nsgRule4 = New-AzNetworkSecurityRuleConfig -Name mynsgRule4 -Description "Allow 8142 tcp" `
+    -Access Allow -Protocol Tcp -Direction Inbound -Priority 140 `
+    -SourceAddressPrefix Internet -SourcePortRange * `
+    -DestinationAddressPrefix * -DestinationPortRange 8142
+    $nsg = New-AzNetworkSecurityGroup -Name $nsgName -ResourceGroupName $ResourceGroupName -Location $LocationName -SecurityRules $nsgRule1,$nsgRule2,$nsgRule3,$nsgRule4
+
 }
 
 
