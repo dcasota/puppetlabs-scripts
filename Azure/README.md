@@ -144,12 +144,11 @@ The lab setup is pretty straightforward. Some considerations for a next, more ad
 ## Puppet
 Facing the findings so far, the user interface of Puppet Enterprise is somewhat helpful for starters.
 
-Eg. a nifty solution has been implemented for local users. You can add a local user, and send the password reset link to the user.
-We all know the situation when a ssh connection is open for hours. Puppetmaster has a time restriction on ssh sessions per default.
-Node jobs reports, events, and account activities are clear and tidy. It's easy to find intentional changes very quickly.
-
-Also, it's a good first impression about the installation steps.
+Eg. you can add a local user and send the password reset link to the user.
+We all know the situation when a ssh connection is has remained open for hours. Puppetmaster has a time restriction on ssh sessions per default.
+Node jobs reports, events, and account activities are clear and tidy. It's easy to find intentional changes.
+Also, the docs give a good first impression about the installation steps.
 
 There are also a few, ui-related disappointments.
-The packages view doesn't show a possibility to filter/sort provider name or instances, but it can be accomplished easily by exporting data to excel by csv file format.
-The class-driven configuration management has advantages for sure, but as beginner AND using the ui, it's hard to get the information about what a class does. If you declare a class to apply to nodes, there is no help text eg. when hovering over the class text.
+The packages view doesn't show a possibility to filter/sort provider name or instances, but it can be accomplished by exporting data to excel.
+The class-driven configuration management has advantages. As beginner AND following the guidelines to use the ui, hoewever it's hard to get the information about what a class does. If you declare a class to apply to nodes, there is no help text eg. when hovering over the class text.
