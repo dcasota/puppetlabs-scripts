@@ -88,6 +88,18 @@ Eg. check the node facts.
 
 ![peagentinfo](https://user-images.githubusercontent.com/14890243/178144125-e9af06bf-0ea6-4d7c-b04d-9d36989f74cf.png)
 
+## View and manage package inventory
+
+To get to know which packages are installed on the nodes, package inventory must be enabled. Having checked the [docs](https://puppet.com/docs/pe/2019.8/viewing_packages_in_use.html), don't forget to run the puppet task twice.
+
+![viewingpackages](https://user-images.githubusercontent.com/14890243/178145830-41210dba-ec35-409a-881b-3ef9b754d1e1.png)
+
+To rerun the task, go to Jobs, click on the job and push the "run again" button. After the rerun you can browse the packages catalog.
+
+![enabledpackages](https://user-images.githubusercontent.com/14890243/178146050-f4995e21-5965-4266-9a0e-fa2f93d2382c.png)
+
+As the RPi4 has been setuped with VMware Photon OS, you can find as provider the package manager tdnf in the provider listing as well, see [tdnf Photon OS docs](https://vmware.github.io/photon/docs/administration-guide/managing-packages-with-tdnf/).
+
 # Lab findings
 
 ## Setup
