@@ -52,6 +52,7 @@ Since quite a while Puppetlabs supports Puppet agent on aarch64 as well. Unfortu
 curl -J -O -L https://yum.puppetlabs.com/puppet/el/7/aarch64/puppet-agent-7.9.0-1.el7.aarch64.rpm
 rpm -i puppet-agent-7.9.0-1.el7.aarch64.rpm
 /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+ln -s /opt/puppetlabs/bin/puppet /bin
 ```
 
 
