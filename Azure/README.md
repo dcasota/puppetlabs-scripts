@@ -2,10 +2,9 @@
 
 In this lab, we will configure a public Puppetserver on Azure and a local RPi4 node.
 
-To get an idea of the system configuration, see [here](https://puppet.com/docs/pe/2019.8/system_configuration.html).
-
 ## Puppetserver Cloud image
-Before going to interconnect the Azure cloud environment, let's start with provisioning the puppetserver cloud image.
+
+Let's start with provisioning the puppetserver cloud image. To get an idea of the system configuration, see [here](https://puppet.com/docs/pe/2019.8/system_configuration.html).
 
 On the Azure marketplace, the latest available cloud image is pe2019.8.11. You can go through through the UI dialog steps to configure a puppetserver. As alternative, you can run a scripted install.
 
