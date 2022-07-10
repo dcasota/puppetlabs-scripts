@@ -100,13 +100,55 @@ To rerun the task, go to Jobs, click on the job and push the "run again" button.
 
 As the RPi4 has been setuped with VMware Photon OS, you can find as provider the package manager tdnf in the provider listing as well, see [tdnf Photon OS docs](https://vmware.github.io/photon/docs/administration-guide/managing-packages-with-tdnf/).
 
+## TLS
+
+Photon OS and Puppet both support transport layer security level (TLS) version 1.3, see [Puppetserver release notes](https://puppet.com/docs/pe/2019.8/osp/server/release_notes.html).
+
+Actually I'm not sure what puppet does if we specify the tls level.
+
+There is a short intro about [where to configure the ssl protocols](https://puppet.com/docs/pe/2019.8/enable_tlsv1.html).
+
+![tls1 3onnodes](https://user-images.githubusercontent.com/14890243/178146970-64e56bd1-a7d3-4a58-bef3-6290d7a59c52.png)
+
+The puppet job runs successfully. On the job reports we can see what happened.
+
+The puppetserver report shows that the sequence has changed the default from "TLSv1.3,TLSv1.2" to "TLSv1.2,TLSv1.3".
+
+![tlsprotocols](https://user-images.githubusercontent.com/14890243/178147841-8ddcba0d-8a80-4ac6-8047-499a2d47c0e7.png)
+
+Hence, to ensure the sequence "TLSv1.3,TLSv1.2" on puppetserver, nothing has to be done. 
+
+As expected, on the photon node this is not the case.
+
+![tlsprotocolsphoton](https://user-images.githubusercontent.com/14890243/178147846-c72497af-357a-4200-80fb-056476bbd133.png)
+
+So, how to enforce TLS sequence on the node as well? (to be continued)
+
+
 # Lab findings
 
 ## Setup
 
 The lab setup is pretty straightforward. Some considerations for a next, more advanced setup could be:
 - Add Puppet ci/cd examples
-- Networking: eg. Azure Private Cloud with restricted VNET and RPI4 VPN connectivity, cloud image rework for Azure GenV2 to support secureboot+tpm, TLS1.3 standardization, etc.
-- Monitoring: Longterm workload considerations for Puppetserver, eg. justification for vm size Standard_A4_v2, additional disk.
-- Troubleshoot knowledge, considering availability + scaling
+- Azure Networking: eg. Azure Private Cloud with restricted VNET and RPI4 VPN connectivity, cloud image rework for Azure GenV2 to support secureboot+tpm, etc.
+- Azure Monitoring: Longterm workload considerations for Puppetserver, eg. justification for vm size Standard_A4_v2, additional disk.
+- Azure&Puppet Troubleshoot knowledge, considering availability + scaling
+
+## Puppet
+Facing the findings so far, the user interface of Puppet Enterprise is somewhat helpful for starters.
+
+Eg. a nifty solution has been implemented for local users. You can add a local user, and send the password reset link to the user.
+We all know the situation when a ssh connection is open for hours. Puppetmaster has a time restriction on ssh sessions per default.
+Node jobs reports, events, and account activities are clear and tidy. It's easy to find intentional changes very quickly.
+
+Also, it's a good first impression about the installation steps.
+
+There are also a few, ui-related disappointments.
+The packages view doesn't show a possibility to filter/sort provider name or instances, but it can be accomplished easily by exporting data to excel by csv file format.
+The class-driven configuration management has advantages for sure, but as beginner AND using the ui, it's hard to get the information about what a class does. If you declare a class to apply to nodes, there is no help text eg. when hovering over the class text.
+
+
+
+
 
