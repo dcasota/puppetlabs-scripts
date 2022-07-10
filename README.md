@@ -6,7 +6,7 @@ The goal of a new tools for Kubernetes and cloud native apps resulted already in
 
 I had an interesting talk to Roger Widmer, IT infrastructure head&expert at MeteoSwiss. He convinced me to get familiar with puppet. MeteoSwiss produces climate information. Engineers do environmental science (environmental and climate change modeling, glacier studies, urban hydrological modeling, meteorological studies) and for their work baremetal performance cpu/gpu/storage/ram is critical.
 
-Here some related weather observations weblinks:  
+Here some weather observations related weblinks:  
 - COSMO, Consortium for small scale modeling: https://www.cosmo-model.org/content/support/software/default.htm
 - Snowmelt modeling: https://wiki.c2sm.ethz.ch/pub/MODELS/COSMOCuW2019/3_COSMO_User_Workshop_19_TJonas.pdf
 - MeteoSwiss Payerne Atmospheric Observatory: http://srnwp.cosmo-model.org/archive/Payerne/support/metadata.pdf
