@@ -73,11 +73,20 @@ puppet ssl bootstrap
 
 With default settings, the puppetserver does not know that agent' certificate.  
 
-<img src="https://user-images.githubusercontent.com/14890243/178143212-36d971ab-dfc4-4cb7-8a43-aa1078ce8fe3.png" align="left" height="80" width="500" />
+<img src="https://user-images.githubusercontent.com/14890243/178143903-ca05742d-3bf9-4046-b9a5-3b8474615af4.png" align="left" height="120" width="600" />
 <br clear="left"/><br clear="both"/>
 
-You can sign agent's certificate on the puppetserver UI.  
+You can sign agent's certificate eg. on the puppetserver UI.  
 
 ![pecertagent](https://user-images.githubusercontent.com/14890243/178143022-e2162711-24ed-4ca0-9adb-8499e010c0ae.png)
 
-Rerun ```puppet ssl bootstrap```. Now the command completes successfully.
+On the RPI4, rerun ```puppet ssl bootstrap```. Now the command completes successfully. Run ```puppet agent --test```, too.
+
+After that, the node is fully available on puppetserver node.
+
+Eg. check the node facts.
+
+![peagentinfo](https://user-images.githubusercontent.com/14890243/178144125-e9af06bf-0ea6-4d7c-b04d-9d36989f74cf.png)
+
+
+
