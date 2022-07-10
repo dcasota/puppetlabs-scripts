@@ -40,5 +40,21 @@ The console appears.
 ![peloggedin](https://user-images.githubusercontent.com/14890243/178112702-7e423664-2131-4b8c-8512-26ea77222ad9.png)
 
 
+## Puppet Agent on VMware Photon OS on Raspberry Pi 4
+
+VMware Photon OS is a minimal container host Linux optimized to run on VMware platforms but capable of running in other environments as well. See [here](https://vmware.github.io/photon/) and [here](https://github.com/dcasota/photonos-scripts).
+
+You can find [here](https://github.com/dcasota/photonos-scripts/wiki/Configure-a-complete-Raspberry-Pi-Virtualhere-installation) a description on how to install and configure the operating system, that said, without any automation. Instead of the Virtualhere part, let's start with installing the puppet agent.
+
+Since quite a while Puppetlabs supports Puppet Agent on aarch64 as well. Unfortunately there is no tdnf package (tiny dandified yum) on Photon OS, but you can download the bits from https://yum.puppetlabs.com/puppet. So, here's the installation recipe - it will install the rhel 7.9 puppet agent bits.
+
+```
+curl -J -O -L https://yum.puppetlabs.com/puppet/el/7/aarch64/puppet-agent-7.9.0-1.el7.aarch64.rpm
+rpm -i puppet-agent-7.9.0-1.el7.aarch64.rpm
+/opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+```
+
+
+
 
 
