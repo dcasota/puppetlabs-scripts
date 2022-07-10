@@ -88,5 +88,13 @@ Eg. check the node facts.
 
 ![peagentinfo](https://user-images.githubusercontent.com/14890243/178144125-e9af06bf-0ea6-4d7c-b04d-9d36989f74cf.png)
 
+# Lab findings
 
+## Setup
+
+The lab setup is pretty straightforward. Some considerations for a next, more advanced setup could be:
+- Add Puppet ci/cd examples
+- Networking: eg. Azure Private Cloud with restricted VNET and RPI4 VPN connectivity, cloud image rework for Azure GenV2 to support secureboot+tpm, TLS1.3 standardization, etc.
+- Monitoring: Longterm workload considerations for Puppetserver, eg. justification for vm size Standard_A4_v2, additional disk.
+- Troubleshoot knowledge, considering availability + scaling
 
