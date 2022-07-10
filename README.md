@@ -23,14 +23,20 @@ Puppetlabs offers Puppet Enterprise (PE) as cloud image for a standard installat
 This lab contains of following setup:
 - Puppetmaster on Azure
 - Laptop connected to the internet
-- Puppet Agent on VMware Photon OS on Raspberry Pi4 as Node  
+- Puppet Agent on VMware Photon OS on Raspberry Pi4 as node  
 
 Azure Lab: https://github.com/dcasota/puppetlabs-scripts/blob/main/Azure/README.md
 
 ## AWS Lab
 (not started)
 
-## Documentation
-[Manual Puppet Enterprise 2019.8.11](https://github.com/dcasota/puppetlabs-scripts/files/9077405/pe.pdf)
+## Documentation, web links
+[Manual Puppet Enterprise 2019.8.11](https://github.com/dcasota/puppetlabs-scripts/files/9077405/pe.pdf)  
+[Learn puppet](https://learn.puppet.com)  
+[Download](https://yum.puppetlabs.com/)  
+[Knowledge base](https://support.puppet.com/hc/en-us)  
+[Support Service Levels](https://puppet.com/support/technical-support-packages/)  
+[Tickets Puppetlabs](https://tickets.puppetlabs.com/secure/Dashboard.jspa)  
+[Forge - Puppet Modules](https://forge.puppet.com/)  
 
 
