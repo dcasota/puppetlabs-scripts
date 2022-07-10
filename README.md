@@ -14,7 +14,9 @@ Here some related weather observations weblinks:
 - NinJo Meteorological Workstation: [http://www.ninjo-workstation.com/](http://www.ninjo-workstation.com/project-members.0.html)
 - Abstractions for Weather and Climate Models: https://pasc17.pasc-conference.org/fileadmin/user_upload/pasc17/program/MS21.pdf
 
-Roger explained that the puppet enterprise platform powers all MeteoSwiss weather observations related research workstations and server farms. For the planned datacenter projects - new geolocation and adoption to multi-cloud, business continuity management is a main topic. 
+Roger explained that the puppet enterprise platform already powers all MeteoSwiss weather observations related research workstations and server farms. For the planned datacenter projects - new geolocation and adoption to multi-cloud, business continuity management is a main topic. 
+
+So, let's start exploring!
 
 # Jumpstart with Puppet Enterprise cloud images
 Puppetlabs offers Puppet Enterprise (PE) as cloud image for a standard installation available from the [AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-df2wt3ipoydbe), [Microsoft Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/puppet.puppet-enterprise-201818) and for the [Oracle Cloud Marketplace](https://cloudmarketplace.oracle.com/marketplace/en_US/listing/101747862), see the [hardware requirements for cloud deployments](https://puppet.com/docs/pe/2019.8/hardware_requirements.html#hardware_requirements_cloud). For VMware datacenters, vRealize Automation offers a [Puppet Enterprise Integration](https://docs.vmware.com/de/vRealize-Automation/8.8/Using-and-Managing-Cloud-Assembly/GUID-EDEEE4C7-8EEB-424F-8DC1-E9F8CCE1F27B.html) as well.
