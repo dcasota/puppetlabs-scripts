@@ -2,6 +2,8 @@
 
 In this lab, we will configure a public Puppetserver on Azure and a local RPi4 node.
 
+The home lab infrastructure is dynamically allocated to save resources. You can cleanup the resources of the (Azure) environment and reprovision the lab as much needed for learning purposes. Keep in mind that the setup is not intended to use for a productive environment.
+
 ## Puppetserver Cloud image
 
 Let's start with provisioning the puppetserver cloud image. To get an idea of the system configuration, see [here](https://puppet.com/docs/pe/2019.8/system_configuration.html).
@@ -27,7 +29,7 @@ It may take a while until the puppetserver vm is up and running. Meanwhile conne
 ### First run  
   
 #### Wrong Publisher+Product is displayed when creating a puppet vm from marketplace
-The script uses ```Set-AzMarketplaceTerms```. Not sure why but at that point a wrong publisher+productname is displayed. Maybe the Azure community can help?
+The script uses ```Set-AzMarketplaceTerms```. Not sure why but at that point a wrong publishername+productname is displayed. Maybe the Azure community can help?
 https://docs.microsoft.com/en-us/answers/questions/917999/wrong-publisherproduct-is-displayed-when-creating.html
 
 #### Console Password
@@ -44,14 +46,19 @@ The console appears.
 
 ![peloggedin](https://user-images.githubusercontent.com/14890243/178112702-7e423664-2131-4b8c-8512-26ea77222ad9.png)
 
+## Cleanup
+
+Before rerun the Azure setup, delete the Azure resourcegroup puppet (Default) with all sub components and wait until all resources have been destroyed.
+
+The install script allows to specify location, resourcegroup and puppetserver name.
 
 ## Puppet Agent on VMware Photon OS on Raspberry Pi 4
 
 VMware Photon OS is a minimal container host Linux optimized to run on VMware platforms but capable of running in other environments as well. See [here](https://vmware.github.io/photon/) and [here](https://github.com/dcasota/photonos-scripts).
 
-You can find [here](https://github.com/dcasota/photonos-scripts/wiki/Configure-a-complete-Raspberry-Pi-Virtualhere-installation) a description on how to install and configure the operating system, that said, provisioned without any automation tools. Instead of the Virtualhere installation part, install the puppet agent bits.
+You can find [here](https://github.com/dcasota/photonos-scripts/wiki/Configure-a-complete-Raspberry-Pi-Virtualhere-installation) a description on how to install and configure the operating system, that said, provisioned without any automation tools so far. But, instead of the Virtualhere installation part, install the puppet agent bits.
 
-Since quite a while Puppetlabs supports Puppet agent on aarch64 as well. Unfortunately there is no tdnf package (tiny dandified yum) of Puppet agent on Photon OS, but you can download the rpm from https://yum.puppetlabs.com/puppet. Here's the installation recipe - it installs the rhel 7.9 puppet agent.
+Since quite a while Puppetlabs supports Puppet agent on aarch64. Unfortunately there is no tdnf package (tiny dandified yum) version of Puppet agent on Photon OS, but you can download the rpm from https://yum.puppetlabs.com/puppet. Here's the installation recipe - it installs the rhel 7.9 puppet agent.
 
 ```
 # change ip and fqdn to your lab environment
@@ -146,8 +153,3 @@ Also, it's a good first impression about the installation steps.
 There are also a few, ui-related disappointments.
 The packages view doesn't show a possibility to filter/sort provider name or instances, but it can be accomplished easily by exporting data to excel by csv file format.
 The class-driven configuration management has advantages for sure, but as beginner AND using the ui, it's hard to get the information about what a class does. If you declare a class to apply to nodes, there is no help text eg. when hovering over the class text.
-
-
-
-
-
