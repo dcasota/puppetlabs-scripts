@@ -1,5 +1,9 @@
 # Azure Lab environment
 
+In this lab, we will configure a public Puppetserver on Azure and a RPi4 node.
+
+To get an idea of the system configuration, see [here](https://puppet.com/docs/pe/2019.8/system_configuration.html).
+
 ## Puppetserver Cloud image
 Before going to interconnect the Azure cloud environment, let's start with provisioning the puppetserver cloud image.
 
@@ -13,6 +17,8 @@ The following script [Puppet-Install.ps1](https://github.com/dcasota/puppetlabs-
 Prerequisites are:
 - Script must run on MS Windows OS with Powershell PSVersion 5.1 or higher
 - Azure account with Virtual Machine contributor role
+
+The script supports many additional parameters. It can be used for more advanced lab setups as well.
 
 It may take a while until the puppetserver vm is up and running. Meanwhile connect with ssh using the localadmin credentials, and run ```sudo /opt/puppetlabs/cloud/bin/check_status.sh --wait```. Wait until the configuration process has finished.  
 
