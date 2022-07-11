@@ -32,9 +32,11 @@ Azure Lab: https://github.com/dcasota/puppetlabs-scripts/blob/main/Azure/README.
 ## AWS Lab
 (not started)
 
-## Documentation, web links
-[Manual Puppet Enterprise 2019.8.11](https://github.com/dcasota/puppetlabs-scripts/files/9077405/pe.pdf)  
+## Vendor and 3rd Party documentation, web links
+[Manual Puppet Enterprise 2019.8.11](https://github.com/dcasota/puppetlabs-scripts/files/9077405/pe.pdf) 
 [Learn puppet](https://learn.puppet.com)  
+[Puppet Cookbook Third Edition - Thomas Uphill / John Arundel](https://github.com/dcasota/puppetlabs-scripts/files/9083871/Puppet.Cookbook.Third.Edition.pdf)  
+[Puppet Cookbook Fourth Edition](https://www.packtpub.com/product/puppet-5-cookbook-fourth-edition/9781788622448)  
 [Download](https://yum.puppetlabs.com/)  
 [Knowledge base](https://support.puppet.com/hc/en-us)  
 [Support Service Levels](https://puppet.com/support/technical-support-packages/)  
