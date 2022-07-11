@@ -48,9 +48,11 @@ The console appears.
 
 ## Cleanup
 
-Before a rerun of the Azure setup, delete the Azure resourcegroup "puppet" (Default) with all sub components and wait until all resources have been destroyed.
+Go to the next section if you haven't finished your Lab setup. This cleanup section is intended if you want to rerun the Lab setup.
 
-The install script allows to specify location, resourcegroup and puppetserver name.
+The Puppet-install script allows to specify location, resourcegroup and puppetserver name.
+
+Before a rerun of the Azure setup, delete the dynamically allocated Azure resourcegroup "puppet" (Default) with all sub components and wait until all resources have been destroyed.
 
 ## Puppet Agent on VMware Photon OS on Raspberry Pi 4
 
@@ -145,7 +147,7 @@ The lab setup is pretty straightforward. Some considerations for a next, more ad
 Facing the findings so far, the user interface of Puppet Enterprise is somewhat helpful for starters.
 
 Eg. you can add a local user and send the password reset link to the user.
-We all know the situation when a ssh connection is has remained open for hours. Puppetmaster has a time restriction on ssh sessions per default.
+Admins know the situation when a ssh connection has remained open for hours. Puppetmaster has a time restriction on ssh sessions per default.
 Node jobs reports, events, and account activities are clear and tidy. It's easy to find intentional changes.
 Also, the docs give a good first impression about the installation steps.
 
