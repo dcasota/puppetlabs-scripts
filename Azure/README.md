@@ -130,14 +130,14 @@ As expected, on the photon node this is not the case.
 
 ![tlsprotocolsphoton](https://user-images.githubusercontent.com/14890243/178147846-c72497af-357a-4200-80fb-056476bbd133.png)
 
-So, how to enforce TLS sequence on the node as well? (to be continued)
+As finding, keep in mind to check TLS sequence on nodes as well.
 
 
 # Lab findings
 
 ## Setup
 
-The lab setup is pretty straightforward. Some considerations for a next, more advanced setup could be:
+The lab setup is pretty straightforward. Some considerations for a next, more advanced setup could be
 - Add Puppet ci/cd examples
 - Azure Networking: eg. Azure Private Cloud with restricted VNET and RPI4 VPN connectivity, cloud image rework for Azure GenV2 to support secureboot+tpm, etc.
 - Azure Monitoring: Longterm workload considerations for Puppetserver, eg. justification for vm size Standard_A4_v2, additional disk.
