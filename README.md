@@ -4,7 +4,7 @@ Puppet is a open source software configuration management and deployment tool. I
 Lately, in 2022 the company Puppetlabs has been acquired by Perforce - a leading provider of highly scalable development and DevOps solutions.
 The goal of a new tools for Kubernetes and cloud native apps resulted already in a market consolidation of independent configuration management vendors , eg. Chef has been Acquired by Progress, Ansible has been bought by IBM, and Saltstack has been bought by VMware in 2020.  The focus on making data center and cloud infrastructure easily consumable and facing the multi-cloud adoption challenges, the competitor Hashicorp gained between 2015 until 2022 more traction with their products Terraform, Packer, Vault, etc. than Puppet did before. Today the Puppet community embraced the Hashicorp tools at forge.puppet.com.
 
-I had an interesting talk to Roger Widmer, IT infrastructure head&expert at MeteoSwiss. He convinced me to get familiar with puppet. MeteoSwiss produces climate information. Engineers do environmental science (environmental and climate change modeling, glacier studies, urban hydrological modeling, meteorological studies) and for their work baremetal performance cpu/gpu/storage/ram is critical.
+I had an interesting talk at MeteoSwiss with an IT infrastructure head&expert. MeteoSwiss produces climate information. Engineers do environmental science (environmental and climate change modeling, glacier studies, urban hydrological modeling, meteorological studies) and for their work baremetal performance cpu/gpu/storage/ram is critical. They use Puppet as their preferred configuration management automation tool.
 
 Here some weather observations related weblinks:  
 - COSMO, Consortium for small scale modeling: https://www.cosmo-model.org/content/support/software/default.htm
@@ -14,7 +14,7 @@ Here some weather observations related weblinks:
 - NinJo Meteorological Workstation: [http://www.ninjo-workstation.com/](http://www.ninjo-workstation.com/project-members.0.html)
 - Abstractions for Weather and Climate Models: https://pasc17.pasc-conference.org/fileadmin/user_upload/pasc17/program/MS21.pdf
 
-Roger explained that the puppet enterprise platform already powers all MeteoSwiss weather observations related research workstations and server farms. For the planned datacenter projects - new geolocation and adoption to multi-cloud, business continuity management is a main topic. 
+The puppet enterprise platform already powers all MeteoSwiss weather observations related research workstations and server farms. For the planned datacenter projects - new geolocation and adoption to multi-cloud, business continuity management is a main topic. 
 
 So, let's start exploring!
 
