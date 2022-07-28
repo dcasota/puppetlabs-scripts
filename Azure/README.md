@@ -153,4 +153,4 @@ Also, the docs give a good first impression about the installation steps.
 
 There are also a few, ui-related disappointments.
 The packages view doesn't show a possibility to filter/sort provider name or instances, but it can be accomplished by exporting data to excel.
-The class-driven configuration management has advantages. As beginner AND following the guidelines to use the ui, hoewever it's hard to get the information about what a class does. If you declare a class to apply to nodes, there is no help text eg. when hovering over the class text.
+The class-driven configuration management has advantages. As beginner AND following the guidelines to use the ui, however, it's hard to get the information about what a class does. If you declare a class to apply to nodes, there is no help text eg. when hovering over the class text.
